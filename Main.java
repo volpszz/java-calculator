@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-void main(){
+ void main(){
     Scanner sc = new Scanner(System.in);
     double a;
     double b;
@@ -10,18 +10,20 @@ void main(){
     a = sc.nextDouble();
     System.out.println("Qual o segundo numero? ");
     b = sc.nextDouble();
-    System.out.println("Qual operacao voce quer? (+ | - | d");
+    System.out.println("Qual operacao voce quer? (+ | - | d)");
     tipo = sc.next().charAt(0);
-     if (tipo == '+'){
-         System.out.println("sua soma deu: " + (a + b));
-}
-    else if (tipo == '-') {
-         System.out.println("sua subtracao deu: " + (a - b));
-}
-    else if (tipo == 'd') {
-         System.out.println("sua divisao deu: " + (a / b));
-}
-sc.close();
+     switch(tipo){
+         case '+':
+             System.out.printf("Seu resultado e: %.2f%n", a + b);
+             break;
+         case '-':
+             System.out.printf("Seu resultado e: %.2f%n", a - b);
+             break;
+         case 'd':
+             System.out.printf("Seu resultado e: %.2f%n", a / b);
+             break;
+     }
+    sc.close();
 }
 
 
