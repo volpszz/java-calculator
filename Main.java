@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
- void main(){
+void main(){
     Scanner sc = new Scanner(System.in);
     double a;
     double b;
@@ -12,17 +12,20 @@ import java.util.Scanner;
     b = sc.nextDouble();
     System.out.println("Qual operacao voce quer? (+ | - | d)");
     tipo = sc.next().charAt(0);
-     switch(tipo){
-         case '+':
-             System.out.printf("Seu resultado e: %.2f%n", a + b);
-             break;
-         case '-':
-             System.out.printf("Seu resultado e: %.2f%n", a - b);
-             break;
-         case 'd':
-             System.out.printf("Seu resultado e: %.2f%n", a / b);
-             break;
-     }
+    switch(tipo){
+        case '+':
+            System.out.printf("Seu resultado e: %.2f%n", a + b);
+            break;
+        case '-':
+            System.out.printf("Seu resultado e: %.2f%n", a - b);
+            break;
+        case 'd':
+            System.out.printf("Seu resultado e: %.2f%n", a / b);
+            break;
+        default:
+            System.out.println("Operaçao invalida!");
+            break;
+    }
     sc.close();
 }
 
