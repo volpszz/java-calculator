@@ -1,38 +1,64 @@
 import java.util.Scanner;
 
-void main() {
-    Scanner sc = new Scanner(System.in);
-    char continuar;
-    double a;
-    double b;
-    char tipo;
-    System.out.println("Bem vindo a calculadora!");
+public class Calculator {
 
-    do {
-        System.out.println("Qual o primeiro numero? ");
-        a = sc.nextDouble();
-        System.out.println("Qual o segundo numero? ");
-        b = sc.nextDouble();
-        System.out.println("Qual operacao voce quer? (+ | - | d)");
-        tipo = sc.next().charAt(0);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char again;
+        double a;
+        double b;
+        char type;
+        System.out.println("Welcome to Calculator!");
 
-    switch (tipo) {
-        case '+':
-            System.out.printf("Seu resultado e: %.2f%n", a + b);
-            break;
-        case '-':
-            System.out.printf("Seu resultado e: %.2f%n", a - b);
-            break;
-        case 'd':
-            System.out.printf("Seu resultado e: %.2f%n", a / b);
-            break;
-        default:
-            System.out.println("Operaçao invalida!");
-            break;
+        do {
+            System.out.println("What is the first number?");
+            a = sc.nextDouble();
+            System.out.println("What is the second number?");
+            b = sc.nextDouble();
+            System.out.println("What operation do you want? (+ | - | * | /)");
+            type = sc.next().charAt(0);
+
+            switch (type) {
+                case '+':
+                    showResult(add(a,b));
+                    break;
+                case '-':
+                    showResult(subtract(a,b));
+                    break;
+                case '*':
+                    showResult(multiply(a,b));
+                    break;
+                case '/':
+                    if (b == 0){
+                        System.out.println("Error: cannot divide by zero!");
+                    }
+                    else {
+                        showResult(divide(a, b));
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid Operation!");
+                    break;
+            }
+            System.out.println("Do you want to continue? (s/n)");
+            again = sc.next().toLowerCase().charAt(0);
+        } while (again == 's');
+        System.out.println("Ending Calculator!");
+        sc.close();
     }
-    System.out.println("Deseja continuar?");
-    continuar =  sc.next().toLowerCase().charAt(0);
-    } while (continuar == 's');
-       System.out.println("Encerrando Calculadora!");
-       sc.close();
+    public static double add(double x,double y){
+      return x + y;
+    }
+    public static double subtract(double x,double y){
+        return x - y;
+    }
+    public static double divide(double x,double y){
+        return x / y;
+    }
+    public static double multiply(double x, double y){
+        return x * y;
+    }
+    public static void showResult(double result){
+        System.out.println("Your Result: " + result);
+    }
 }
