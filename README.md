@@ -21,7 +21,7 @@ pooJava-calculator/
 ## 🚀 How to run
 1. Clone the repository
 ```bash
-git clone https://github.com/volpszz/pooJava-calculator
+git clone https://github.com/volpszz/oopJava-calculator
 ```
 2. Open the project in IntelliJ IDEA
 3. Run `Calculator.java`
